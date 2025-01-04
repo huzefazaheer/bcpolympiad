@@ -1,0 +1,82 @@
+a,
+a:hover {
+	text-decoration: none;
+}
+
+nav {
+	background-color: var(--color-accent);
+	padding: 5px 2rem;
+	position: absolute;
+	margin-top: 30px;
+	border-radius: 32px;
+	display: flex;
+	transition: top 0.3s;
+	justify-content: center;
+	min-height: 12vh;
+	width: 90vw;
+	left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+nav a {
+	color: var(--color-secondary);
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+.top {
+	display: flex;
+	align-items: center;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	transition: 0.5s;
+}
+
+.menu li {
+	padding: 20px 20px;
+	font-size: 1rem;
+}
+
+.toggler {
+	display: none;
+	width: 48px;
+  height: 48px;
+}
+
+/* Navbar toggle for mobile screens */
+@media screen and (max-width: 600px) {
+	nav {
+		display: block;
+		align-items: center;
+		padding-top: 20vw;
+		transition: all 0.5s ease-in-out;
+	}
+
+	nav .top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.menu {
+		display: none;
+	}
+	.menu#active,
+	.toggler {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;
+		width: 48px;
+  height: 48px;
+	}
+	.toggler {
+		font-size: 2rem;
+	}
+}

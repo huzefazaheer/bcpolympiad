@@ -1,0 +1,307 @@
+.formcontainer {
+	padding-top: 6vh;
+	background-color: var(--color-background);
+	/* max-width: 60vw; */
+}
+
+form h1 {
+	font-size: 72px;
+}
+
+h1 {
+	font-family: Cinzel, sans-serif;
+	font-weight: 400;
+}
+
+.forminput {
+	display: grid;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	row-gap: 1vh;
+}
+
+.specialinput {
+	row-gap: 1vh;
+}
+
+label {
+	color: var(--color-secondary);
+	font-family: Futura;
+	font-size: 1rem;
+}
+
+input {
+	background-color: #ffffff00;
+}
+
+input:not([type='button']) {
+	border: var(--color-secondary) 1px solid;
+	padding: 1vh 0.5vw;
+	width: 40vw;
+	height: 38px;
+}
+
+/* button {
+	flex-basis: 16rem;
+	min-width: 16rem;
+} */
+
+.buttongroup {
+	margin-top: 12vh;
+	display: flex;
+	grid-template-rows: 1fr;
+	column-gap: 6vw;
+	justify-content: center;
+}
+
+.registersec {
+	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 0 8vh 0;
+}
+
+h4 {
+	font-size: 1rem;
+	font-family: Futura-MD, sans-serif;
+	font-weight: 300;
+}
+
+.detailcontainer {
+	row-gap: 1rem;
+	padding: 0 20vw;
+	grid-template-rows: 1fr;
+	grid-template-columns: 2fr 6fr 1fr !important;
+	align-items: center;
+	row-gap: 4vh;
+}
+
+#teamname {
+	flex-basis: 38rem;
+}
+
+.detailform {
+	display: flex !important;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+h5 {
+	font-size: 1rem;
+	font-family: Futura-MD, sans-serif;
+	font-weight: 200;
+	margin-top: 6vh;
+}
+
+#formtitles {
+	margin-top: 16vh;
+	font-family: Futura;
+}
+
+.registersec p {
+	font-family: Futura, sans-serif;
+}
+
+.inputcontainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 1rem;
+	margin-top: 4vh;
+}
+
+#disabled {
+	display: none !important;
+}
+
+.error {
+	color: rgb(196, 7, 7);
+	font-family: Futura-LT, serif;
+	font-size: 0.9rem;
+	width: 100%;
+	height: 1rem;
+}
+
+.dropdown > * {
+	width: 40vw;
+}
+
+.special {
+	margin-top: 1vh;
+}
+
+.speciallabel {
+	margin-top: 1.5vh;
+}
+
+/* Form for mobile screens */
+@media (max-width: 600px) {
+	#formtitles {
+		margin-top: 8vh;
+	}
+
+	.detailcontainer {
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.detailform {
+		display: grid !important;
+	}
+
+	.formcontainer {
+		padding-top: 2vh;
+		margin: 0 2rem;
+	}
+
+	button {
+		min-width: 0;
+	}
+
+	.specialinput {
+		row-gap: 0.8vh;
+	}
+
+	.forminput {
+		justify-content: center;
+		margin-top: 0.5vh;
+		row-gap: 0.8vh;
+	}
+
+	.forminput:first-child {
+		margin-top: 0;
+	}
+
+	.forminput:nth-child(3) {
+		justify-content: left;
+	}
+
+	input:not([type='button']) {
+		width: 80vw;
+		padding: 1vh 1vw;
+	}
+
+	.registersec {
+		padding: 4vh 4vw;
+	}
+
+	.registersec h1 {
+		text-align: center;
+		font-size: 3rem;
+		margin-top: 0;
+	}
+
+	.buttongroup {
+		margin-top: 8vh;
+		grid-template-columns: 80vw;
+		row-gap: 2vh;
+		display: grid;
+	}
+
+	.inputcontainer {
+		margin-top: 2vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.dropdown {
+		justify-content: flex-start;
+	}
+
+	.dropdown > * {
+		width: 80vw;
+	}
+}
+/* Css for react select */
+
+.react-select-container {
+	color: var(--color-secondary);
+	background-color: #ffffff00;
+	border: var(--color-secondary) 1px solid;
+	border-radius: 0px;
+}
+
+.react-select__control {
+	background-color: #ffffff00 !important;
+	border-radius: 0px;
+	height: max(fit-content, 38px);
+	border: none !important;
+}
+
+.react-select__control--is-focused {
+	border: 2px !important;
+	border-radius: 0px !important;
+}
+
+.react-select__control:focus {
+	border: 3px solid var(--color-accent);
+}
+
+.react-select__menu {
+	background-color: var(--color-secondary);
+}
+
+.react-select__input-container,
+.react-select__multi-value,
+.react-select__placeholder {
+	font-family: Futura, serif;
+	font-size: 1rem;
+}
+
+.react-select__option {
+	font-family: Futura-LT, serif;
+	font-size: 1rem;
+}
+
+.react-select__input-container {
+	padding: 0 !important;
+	margin: -10px 0 !important;
+}
+
+.react-select__option:hover,
+.react-select__option:enabled,
+.react-select__option--is-focused {
+	background-color: var(--color-primary) !important;
+}
+
+.react-select__multi-value {
+	background-color: var(--color-primary) !important;
+	margin: 2px 3% 2px 2px !important;
+}
+
+.react-select__multi-value__remove:hover {
+	background-color: var(--color-accent) !important;
+	color: var(--color-background) !important;
+}
+
+.react-select__value-container {
+	font-family: Futura;
+	font-size: 1rem;
+	height: max(fit-content, 38px);
+}
+
+.react-select__indicators-container {
+	height: max(fit-content, 38px);
+}
+
+tr:nth-child(odd) {
+	background-color: #fff1dc;
+}
+tr:nth-child(even) {
+	background-color: #fffaf1;
+}
+
+td:first-child {
+	padding: 0.3rem 30vw 0.3rem 0rem;
+}
+
+td:last-child {
+	padding: 0rem 0rem 0rem 0.3rem;
+}
+
+td > p {
+	color: #242424;
+	padding: 0 0.5rem;
+}

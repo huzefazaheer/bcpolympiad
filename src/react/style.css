@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+button{
+	min-width: none !important; 
+}
+
+.montserrat.regular{
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat.light{
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+  }
+
+.montserrat.medium{
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+} 
+
+:root {
+	--color-primary: #A87F10;
+	--color-secondary: #FFFFFF;
+	--color-accent: #131313;
+	--color-background: #000000;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+.button-dark {
+	background-color: var(--color-primary);
+	color: white;
+	border: 1px solid var(--color-primary);
+	padding: 1rem;
+	font-size: 1rem;
+	font-family: "Montserrat", serif;
+	text-align: center;
+}
+
+.button-dark:hover {
+	background-color: #916f11;
+}
+
+.button-dark:active {
+	background-color: #916f118a;
+}
+
+.button-light {
+	background-color: var(--color-secondary);
+	color: black;
+	padding: 1rem;
+	font-family: "Montserrat", serif;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.button-light:hover,
+.button-alternative:hover {
+	background-color: #e0dede;
+}
+
+.button-light:active,
+.button-alternative:active {
+	background-color: #e0dedea4;
+}
+
+.button-alternative {
+	background-color: #ffffff00;
+	color: var(--color-secondary);
+	padding: 1rem;
+	font-family: "Montserrat", serif;
+	font-size: 1rem;
+	text-align: center;
+}

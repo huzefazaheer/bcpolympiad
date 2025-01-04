@@ -1,0 +1,303 @@
+.logo img {
+	width: 68px;
+	margin-right: 10px;
+	height: 68px;
+}
+
+.logo {
+	flex: 1;
+}
+
+.logo a {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+}
+
+h2{
+	color: white;
+}
+
+.hero-heading{
+	font-size: 58px;
+}
+
+.hero-subtitle{
+	font-size: 52px;
+	letter-spacing: 10%;
+}
+
+.hero-title{
+	color: #C19B50;
+	font-weight: bold;
+	font-size: 64px;
+}
+
+.toggle {
+	font-size: 2rem;
+	display: none;
+}
+
+.hero-sec {
+	background-color: var(--color-background);
+	padding-top: 20vh;
+	padding: 25vh 7vw 15vh 7vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	column-gap: 14vw;
+}
+
+.detailtxt{
+	word-spacing: 1rem;
+	font-size: 40px;
+}
+
+.hero-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-img img {
+	width: 270px;
+	height: 270px;
+}
+
+/* Hero for mobile screens */
+@media screen and (max-width: 600px) {
+	.hero-sec {
+		padding: 8vh;
+		flex-direction: column;
+    text-align: center;
+	}
+
+	.hero-img {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.hero-img img {
+		margin-right: 0rem;
+	}
+
+	.hero-title {
+		font-size: 3rem;
+		margin-top: 4vh;
+	}
+	.hero-heading{
+		font-size: 26px;
+	}
+	
+	.hero-subtitle,.hero-heading{
+		width: 100vw;
+		margin-top: 3vh;
+		font-size: 24px;
+	}
+
+}
+
+.location-sec h3{
+	color: white;
+	text-align: center;
+}
+
+ul#clock {
+	display: flex;
+	flex-direction: row;
+}
+
+ul#clock li{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+ul#clock p{
+	font-size: 128px;
+	color: white;
+}
+
+ul#clock h4{
+	font-size: 32px;
+	color: white;
+}
+
+.location-sec {
+	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15vh 7vw;
+}
+
+/* Location for mobile screens */
+@media screen and (max-width: 600px) {
+
+	.location-sec {
+		background-color: var(--color-background);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0vh 7vw 15vh 7vw;
+	}
+
+	ul#clock p{
+		font-size: 3rem;
+	}
+	
+	ul#clock h4{
+		font-size: 1rem;
+	}
+
+	#clock{
+		margin-top: 12vh;
+	}
+}
+
+.calltoaction-sec {
+	background-color: var(--color-background);
+	align-items: center;
+	padding: 15vh 7vw;
+	color: white;
+}
+
+.calltoactionpara{
+	color: #b4b4b4c2;
+	font-size: 30px;
+	margin-top: 30px;
+}
+
+.location{
+	font-size: 32px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.location object{
+	margin-right: 10px;
+}
+
+.beaconhouse{
+  border-left: 1px solid white;
+  padding: 0 20px;
+}
+
+.uppercont{
+	display: flex;
+	flex-direction: row;
+	gap: 3.2vw;
+	margin-bottom: 3.4vw;
+}
+
+.uppercont .right{
+	max-width: 48vw;
+}
+
+.box{
+	border: 1px solid #b4b4b4b8;
+	width: 230px;
+	height: 230px;
+}
+
+.box .dates{
+	display: flex;
+  	gap: 10px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 48px;
+	height: 105px;
+}
+
+.date1{
+	border-right: 1px solid #b4b4b4b8;
+		padding-right: 37.2px;
+}
+
+.box .jan{
+	text-align: center;
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 115px;
+	flex-direction: column-reverse;
+}
+
+.box .jan::after{
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 50%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-top: 1px solid #b4b4b4b8; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.btngroup{
+	display: flex;
+}
+
+.btngroup .button-dark{
+	width: 52vw;
+	height: 6.38vw;
+	margin-right: 42px;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btngroup .button-light{
+	width: 6.38vw;
+	height: 6.38vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+/* CalltoAction for mobile screens */
+@media screen and (max-width: 1200px) {
+	.btngroup{
+		justify-content: center;
+		margin-top: 10vh;
+
+	}
+
+	.btngroup .button-dark{
+		font-size: 18px;
+	}
+	
+	.btngroup .button-light object{
+		width: 32px;
+		height: 32px;
+	}
+
+	.uppercont{
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.location{
+		justify-content: center;
+  align-items: center;
+	}
+
+	.beaconhouse{
+		font-size: 20px;
+	}
+
+	.calltoactionpara{
+		color: #b4b4b4c2;
+		font-size: 20px;
+		text-align: center;
+	}
+}

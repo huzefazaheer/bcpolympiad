@@ -1,0 +1,12 @@
+
+
+.footer-short {
+	background-color: var(--color-accent);
+	height: 4rem;
+	padding: 0;
+	color: white;
+	font-family: Futura;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
