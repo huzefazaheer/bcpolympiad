@@ -61,6 +61,7 @@ export default function RegisterDetail({
 	return (
 		<>
 			<div className="formcontainer">
+			<p className='subtitle register'>We’re so excited to see you {personData.firstname}, now that we know more about you, we just need to a little more information</p>
 				{football ? (
 					<TeamNameInput
 						sportname={'Football'}

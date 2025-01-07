@@ -1,25 +1,25 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from 'firebase/app'
-// import { getAnalytics } from 'firebase/analytics'
-// import { getDatabase } from 'firebase/database'
-// import { getFirestore } from 'firebase/firestore'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
+import { getDatabase } from 'firebase/database'
+import { getFirestore } from 'firebase/firestore'
 
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-// 	apiKey: 'AIzaSyCJlMQv7Nz1jlPEPTA0Lv1-beekeJQVgXo',
-// 	authDomain: 'khariansportsfest-fde2f.firebaseapp.com',
-// 	databaseURL:
-// 		'https://khariansportsfest-fde2f-default-rtdb.asia-southeast1.firebasedatabase.app',
-// 	projectId: 'khariansportsfest-fde2f',
-// 	storageBucket: 'khariansportsfest-fde2f.appspot.com',
-// 	messagingSenderId: '563033377764',
-// 	appId: '1:563033377764:web:a60a2629ba101b0fc0d5f1',
-// 	measurementId: 'G-ZL382PSSXD',
-// }
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig)
-// const analytics = getAnalytics(app)
-// const database = getDatabase(app)
-// const firestoredb = getFirestore(app)
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDR4NjwFeXbhd-DRH4zKq3mR_4g6aCUMy0",
+  authDomain: "bcpolympiad.firebaseapp.com",
+  databaseURL: "https://bcpolympiad-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "bcpolympiad",
+  storageBucket: "bcpolympiad.firebasestorage.app",
+  messagingSenderId: "576040883902",
+  appId: "1:576040883902:web:26d6366493357ed53c70ef",
+  measurementId: "G-H6M4F4J5TY"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

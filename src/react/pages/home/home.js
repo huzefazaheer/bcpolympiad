@@ -35,7 +35,7 @@ function CallToAction() {
 			<div id="calltoaction" class="calltoaction-sec montserrat regular">
 				
 				<div className="uppercont"><div className="left"><div className="box"><div className='dates'><p className='date1'>21</p><p>22</p></div><p className='jan'>January</p></div></div>
-				<div className="right"><div className="location"><object type="image/svg+xml" data={locationtag}></object><p className='beaconhouse'>Beaconhouse Kharian Campus</p></div><p className="calltoactionpara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nostrum vel ipsum, facilis possimus laudantium velit expedita eligendi ipsam at?</p></div></div>
+				<div className="right"><div className="location"><object type="image/svg+xml" data={locationtag}></object><p className='beaconhouse'>Beaconhouse Kharian Campus</p></div><p className="calltoactionpara">Get ready for two days filled with thrilling competitions, exciting sports activities, and memorable moments at Olympiad Season Five.</p></div></div>
 				<div className="btngroup">
 					<button className='button-dark'>Register Now</button>
 					<button className="button-light"><object type="image/svg+xml" data={emailicon}></object></button></div>

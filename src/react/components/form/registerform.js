@@ -43,6 +43,7 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 	return (
 		<>
 			<div className="formcontainer">
+			<p className='subtitle register'>Now that's the spirit, in a few short steps you will sucessfully be registered for BCP Olympiad. Please fill out this form below</p>
 				<div className="inputcontainer">
 					<div className="forminput">
 						<label htmlFor="namefirst">First Name</label>

@@ -1,314 +1,313 @@
 import './register.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import { doc, getFirestore, setDoc } from 'firebase/firestore'
-// import { getDatabase, push, ref } from 'firebase/database'
+import { doc, getFirestore, setDoc } from 'firebase/firestore'
+import { getDatabase, push, ref } from 'firebase/database'
 
 import RegisterPerson from '../../components/form/registerform'
 import RegisterDetail from '../../components/form/registerdetail'
 import OrderSummary from '../../components/form/ordersummary'
 
 export default function Register() {
-	// async function writeUserData(person) {
-	// 	const db = getDatabase()
-	// 	const firestoredb = getFirestore()
-	// 	let sportslist = [{}]
-	// 	for (let i = 0; i < personData.sports.length; i++) {
-	// 		let _game = {
-	// 			name: null,
-	// 			teamname: null,
-	// 			agegroup: null,
-	// 			gametype: null,
-	// 			gameslist: [],
-	// 		}
-	// 		_game.name = personData.sports[i].value
-	// 		if (personData.sports[i].teamname) {
-	// 			_game.teamname = personData.sports[i].teamname
-	// 		}
-	// 		if (personData.sports[i].agegroup) {
-	// 			_game.agegroup = personData.sports[i].agegroup.value
-	// 		}
-	// 		if (personData.sports[i].gametype) {
-	// 			_game.gametype = personData.sports[i].gametype.value
-	// 		}
-	// 		if (personData.sports[i].games) {
-	// 			for (let x = 0; x < personData.sports[i].games.length; x++) {
-	// 				_game.gameslist.push(personData.sports[i].games[x].value)
-	// 			}
-	// 		}
-	// 		sportslist.push(_game)
-	// 	}
+	async function writeUserData(person) {
+		const db = getDatabase()
+		let sportslist = [{}]
+		for (let i = 0; i < personData.sports.length; i++) {
+			let _game = {
+				name: null,
+				teamname: null,
+				agegroup: null,
+				gametype: null,
+				gameslist: [],
+			}
+			_game.name = personData.sports[i].value
+			if (personData.sports[i].teamname) {
+				_game.teamname = personData.sports[i].teamname
+			}
+			if (personData.sports[i].agegroup) {
+				_game.agegroup = personData.sports[i].agegroup.value
+			}
+			if (personData.sports[i].gametype) {
+				_game.gametype = personData.sports[i].gametype.value
+			}
+			if (personData.sports[i].games) {
+				for (let x = 0; x < personData.sports[i].games.length; x++) {
+					_game.gameslist.push(personData.sports[i].games[x].value)
+				}
+			}
+			sportslist.push(_game)
+		}
 
-	// 	push(ref(db, 'participants/'), {
-	// 		cnic: person.cnic,
-	// 		name: person.firstname + ' ' + person.lastname,
-	// 		gender: person.gender.value,
-	// 		age: person.age,
-	// 		phone: person.phone,
-	// 		socials: person.socials.value,
-	// 		games: sportslist,
-	// 		amount: bill,
-	// 	})
-	// }
+		push(ref(db, 'participants/'), {
+			cnic: person.cnic,
+			name: person.firstname + ' ' + person.lastname,
+			gender: person.gender.value,
+			age: person.age,
+			phone: person.phone,
+			socials: person.socials.value,
+			games: sportslist,
+			amount: bill,
+		})
+	}
 
-	// const validateRegisteration = (data) => {
-	// 	const strEmpty = 'Field can not be empty'
-	// 	const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
-	// 	const phoneRegex = /([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/
-	// 	let _error = {
-	// 		firstname: '',
-	// 		lastname: '',
-	// 		gender: '',
-	// 		age: '',
-	// 		cnic: '',
-	// 		phone: '',
-	// 		socials: '',
-	// 		sports: '',
-	// 	}
-	// 	let noError = true
-	// 	if (!data.firstname) {
-	// 		_error.firstname = strEmpty
-	// 		noError = false
-	// 	} else {
-	// 		_error.firstname = ''
-	// 	}
-	// 	if (!data.lastname) {
-	// 		_error.lastname = strEmpty
-	// 		noError = false
-	// 	} else {
-	// 		_error.lastname = ''
-	// 	}
-	// 	if (!data.age) {
-	// 		_error.age = strEmpty
-	// 		noError = false
-	// 	} else if (data.age < 12) {
-	// 		_error.age = 'Age can not be less than 12'
-	// 		noError = false
-	// 	} else if (data.age > 25) {
-	// 		_error.age = 'Age can not be more than 25'
-	// 		noError = false
-	// 	} else {
-	// 		_error.age = ''
-	// 	}
-	// 	if (!data.gender) {
-	// 		_error.gender = strEmpty
-	// 		noError = false
-	// 	} else {
-	// 		_error.gender = ''
-	// 	}
-	// 	if (!data.socials) {
-	// 		_error.socials = strEmpty
-	// 		noError = false
-	// 	} else {
-	// 		_error.socials = ''
-	// 	}
-	// 	let glist = []
-	// 	for (let i = 0; i < data.sports.length; i++) {
-	// 		glist.push(data.sports[i].value)
-	// 	}
-	// 	if (Object.keys(data.sports).length === 0) {
-	// 		_error.sports = 'You must choose atleast one sport'
-	// 		noError = false
-	// 	} else if (data.gender.value == 'f') {
-	// 		if (glist.includes('football')) {
-	// 			_error.sports = 'Football is for boys only'
-	// 			noError = false
-	// 		} else if (glist.includes('cricket')) {
-	// 			_error.sports = 'Cricket is for boys only'
-	// 			noError = false
-	// 		}
-	// 	} else if (Object.keys(data.sports).length > 3) {
-	// 		_error.sports = 'You can only choose three sports max'
-	// 		noError = false
-	// 	} else {
-	// 		_error.sports = ''
-	// 	}
+	const validateRegisteration = (data) => {
+		const strEmpty = 'Field can not be empty'
+		const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
+		const phoneRegex = /([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/
+		let _error = {
+			firstname: '',
+			lastname: '',
+			gender: '',
+			age: '',
+			cnic: '',
+			phone: '',
+			socials: '',
+			sports: '',
+		}
+		let noError = true
+		if (!data.firstname) {
+			_error.firstname = strEmpty
+			noError = false
+		} else {
+			_error.firstname = ''
+		}
+		if (!data.lastname) {
+			_error.lastname = strEmpty
+			noError = false
+		} else {
+			_error.lastname = ''
+		}
+		if (!data.age) {
+			_error.age = strEmpty
+			noError = false
+		} else if (data.age < 12) {
+			_error.age = 'Age can not be less than 12'
+			noError = false
+		} else if (data.age > 25) {
+			_error.age = 'Age can not be more than 25'
+			noError = false
+		} else {
+			_error.age = ''
+		}
+		if (!data.gender) {
+			_error.gender = strEmpty
+			noError = false
+		} else {
+			_error.gender = ''
+		}
+		if (!data.socials) {
+			_error.socials = strEmpty
+			noError = false
+		} else {
+			_error.socials = ''
+		}
+		let glist = []
+		for (let i = 0; i < data.sports.length; i++) {
+			glist.push(data.sports[i].value)
+		}
+		if (Object.keys(data.sports).length === 0) {
+			_error.sports = 'You must choose atleast one sport'
+			noError = false
+		} else if (data.gender.value == 'f') {
+			if (glist.includes('football')) {
+				_error.sports = 'Football is for boys only'
+				noError = false
+			} else if (glist.includes('cricket')) {
+				_error.sports = 'Cricket is for boys only'
+				noError = false
+			}
+		} else if (Object.keys(data.sports).length > 3) {
+			_error.sports = 'You can only choose three sports max'
+			noError = false
+		} else {
+			_error.sports = ''
+		}
 
-	// 	if (!data.phone) {
-	// 		_error.phone = strEmpty
-	// 		noError = false
-	// 	} else if (phoneRegex.test(data.phone) == false) {
-	// 		_error.phone = 'Invalid phone number'
-	// 		noError = false
-	// 	} else {
-	// 		_error.phone = ''
-	// 	}
+		if (!data.phone) {
+			_error.phone = strEmpty
+			noError = false
+		} else if (phoneRegex.test(data.phone) == false) {
+			_error.phone = 'Invalid phone number'
+			noError = false
+		} else {
+			_error.phone = ''
+		}
 
-	// 	if (!data.cnic) {
-	// 		_error.cnic = strEmpty
-	// 		noError = false
-	// 	} else if (idRegex.test(data.cnic) == false) {
-	// 		_error.cnic = 'Invalid cnic number'
-	// 		noError = false
-	// 	} else {
-	// 		_error.cnic = ''
-	// 	}
+		if (!data.cnic) {
+			_error.cnic = strEmpty
+			noError = false
+		} else if (idRegex.test(data.cnic) == false) {
+			_error.cnic = 'Invalid cnic number'
+			noError = false
+		} else {
+			_error.cnic = ''
+		}
 
-	// 	setErrors(_error)
+		setErrors(_error)
 
-	// 	return noError
-	// }
-	// const [gamelist, setgamelist] = useState([])
-	// let sportslist = []
-	// let _pointers = {
-	// 	badminton: 0,
-	// 	tabletennis: 0,
-	// 	football: 0,
-	// 	basketball: 0,
-	// 	cricket: 0,
-	// 	egames: 0,
-	// }
-	// const [isSkippable, setSkippable] = useState(true)
-	// const getSportslists = (data) => {
-	// 	for (let i = 0; i < data.sports.length; i++) {
-	// 		sportslist.push(data.sports[i].value)
-	// 		_pointers[data.sports[i].value] = i
-	// 	}
-	// }
-	// const checkSkippable = () => {
-	// 	console.log(sportslist)
-	// 	if (
-	// 		sportslist.includes('egames') ||
-	// 		sportslist.includes('badminton') ||
-	// 		sportslist.includes('tabletennis') ||
-	// 		sportslist.includes('football') ||
-	// 		sportslist.includes('cricket') ||
-	// 		sportslist.includes('basketball')
-	// 	) {
-	// 		setSkippable(false)
-	// 		return false
-	// 	} else {
-	// 		setSkippable(true)
-	// 		return true
-	// 	}
-	// }
-	// const validateDetail = (data) => {
-	// 	const strEmpty = 'Field can not be empty'
-	// 	const strNoAge = 'Age group can not be empty'
-	// 	let noError = true
-	// 	let _error = {
-	// 		badminton: '',
-	// 		tabletennis: '',
-	// 		football: '',
-	// 		basketball: '',
-	// 		cricket: '',
-	// 		egames: '',
-	// 	}
+		return noError
+	}
+	const [gamelist, setgamelist] = useState([])
+	let sportslist = []
+	let _pointers = {
+		badminton: 0,
+		tabletennis: 0,
+		football: 0,
+		basketball: 0,
+		cricket: 0,
+		egames: 0,
+	}
+	const [isSkippable, setSkippable] = useState(true)
+	const getSportslists = (data) => {
+		for (let i = 0; i < data.sports.length; i++) {
+			sportslist.push(data.sports[i].value)
+			_pointers[data.sports[i].value] = i
+		}
+	}
+	const checkSkippable = () => {
+		console.log(sportslist)
+		if (
+			sportslist.includes('egames') ||
+			sportslist.includes('badminton') ||
+			sportslist.includes('tabletennis') ||
+			sportslist.includes('football') ||
+			sportslist.includes('cricket') ||
+			sportslist.includes('basketball')
+		) {
+			setSkippable(false)
+			return false
+		} else {
+			setSkippable(true)
+			return true
+		}
+	}
+	const validateDetail = (data) => {
+		const strEmpty = 'Field can not be empty'
+		const strNoAge = 'Age group can not be empty'
+		let noError = true
+		let _error = {
+			badminton: '',
+			tabletennis: '',
+			football: '',
+			basketball: '',
+			cricket: '',
+			egames: '',
+		}
 
-	// 	if (sportslist.includes('egames')) {
-	// 		const egamesRef = data.sports[_pointers.egames]
-	// 		if (egamesRef.games.length == 0) {
-	// 			_error.egames = 'You have to select atleast one game'
-	// 			noError = false
-	// 		} else if (!egamesRef.teamname && gamelist.includes('pubg')) {
-	// 			_error.egames = strEmpty
-	// 			noError = false
-	// 		} else {
-	// 			_error.egames = ''
-	// 		}
-	// 	}
+		if (sportslist.includes('egames')) {
+			const egamesRef = data.sports[_pointers.egames]
+			if (egamesRef.games.length == 0) {
+				_error.egames = 'You have to select atleast one game'
+				noError = false
+			} else if (!egamesRef.teamname && gamelist.includes('pubg')) {
+				_error.egames = strEmpty
+				noError = false
+			} else {
+				_error.egames = ''
+			}
+		}
 
-	// 	if (sportslist.includes('badminton')) {
-	// 		const badmintonRef = data.sports[_pointers.badminton]
-	// 		if (!badmintonRef.gametype) {
-	// 			_error.badminton = 'Must choose either singles or doubles'
-	// 			noError = false
-	// 		} else if (
-	// 			!badmintonRef.teamname &&
-	// 			badmintonRef.gametype.value == 'two'
-	// 		) {
-	// 			_error.badminton = strEmpty
-	// 			noError = false
-	// 		} else if (!badmintonRef.agegroup) {
-	// 			_error.badminton = strNoAge
-	// 			noError = false
-	// 		} else {
-	// 			_error.badminton = ''
-	// 		}
-	// 	}
+		if (sportslist.includes('badminton')) {
+			const badmintonRef = data.sports[_pointers.badminton]
+			if (!badmintonRef.gametype) {
+				_error.badminton = 'Must choose either singles or doubles'
+				noError = false
+			} else if (
+				!badmintonRef.teamname &&
+				badmintonRef.gametype.value == 'two'
+			) {
+				_error.badminton = strEmpty
+				noError = false
+			} else if (!badmintonRef.agegroup) {
+				_error.badminton = strNoAge
+				noError = false
+			} else {
+				_error.badminton = ''
+			}
+		}
 
-	// 	if (sportslist.includes('tabletennis')) {
-	// 		const tabletennisRef = data.sports[_pointers.tabletennis]
-	// 		if (!tabletennisRef.gametype) {
-	// 			_error.tabletennis = 'Must choose either singles or doubles'
-	// 			noError = false
-	// 		} else if (
-	// 			!tabletennisRef.teamname &&
-	// 			tabletennisRef.gametype.value == 'two'
-	// 		) {
-	// 			_error.tabletennis = strEmpty
-	// 			noError = false
-	// 		} else if (!tabletennisRef.agegroup) {
-	// 			_error.tabletennis = strNoAge
-	// 			noError = false
-	// 		} else {
-	// 			_error.tabletennis = ''
-	// 		}
-	// 	}
+		if (sportslist.includes('tabletennis')) {
+			const tabletennisRef = data.sports[_pointers.tabletennis]
+			if (!tabletennisRef.gametype) {
+				_error.tabletennis = 'Must choose either singles or doubles'
+				noError = false
+			} else if (
+				!tabletennisRef.teamname &&
+				tabletennisRef.gametype.value == 'two'
+			) {
+				_error.tabletennis = strEmpty
+				noError = false
+			} else if (!tabletennisRef.agegroup) {
+				_error.tabletennis = strNoAge
+				noError = false
+			} else {
+				_error.tabletennis = ''
+			}
+		}
 
-	// 	if (sportslist.includes('football')) {
-	// 		const footballRef = data.sports[_pointers.football]
-	// 		if (!footballRef.teamname) {
-	// 			_error.football = strEmpty
-	// 			noError = false
-	// 		} else if (!footballRef.agegroup) {
-	// 			_error.football = strNoAge
-	// 			noError = false
-	// 		} else {
-	// 			_error.football = ''
-	// 		}
-	// 	}
+		if (sportslist.includes('football')) {
+			const footballRef = data.sports[_pointers.football]
+			if (!footballRef.teamname) {
+				_error.football = strEmpty
+				noError = false
+			} else if (!footballRef.agegroup) {
+				_error.football = strNoAge
+				noError = false
+			} else {
+				_error.football = ''
+			}
+		}
 
-	// 	if (sportslist.includes('cricket')) {
-	// 		const cricketRef = data.sports[_pointers.cricket]
-	// 		if (!cricketRef.teamname) {
-	// 			_error.cricket = strEmpty
-	// 			noError = false
-	// 		} else if (!cricketRef.agegroup) {
-	// 			_error.cricket = strNoAge
-	// 			noError = false
-	// 		} else {
-	// 			_error.cricket = ''
-	// 		}
-	// 	}
+		if (sportslist.includes('cricket')) {
+			const cricketRef = data.sports[_pointers.cricket]
+			if (!cricketRef.teamname) {
+				_error.cricket = strEmpty
+				noError = false
+			} else if (!cricketRef.agegroup) {
+				_error.cricket = strNoAge
+				noError = false
+			} else {
+				_error.cricket = ''
+			}
+		}
 
-	// 	if (sportslist.includes('basketball')) {
-	// 		const basketballRef = data.sports[_pointers.basketball]
-	// 		if (!basketballRef.teamname) {
-	// 			_error.basketball = strEmpty
-	// 			noError = false
-	// 		} else if (!basketballRef.agegroup) {
-	// 			_error.basketball = strNoAge
-	// 			noError = false
-	// 		} else {
-	// 			_error.basketball = ''
-	// 		}
-	// 	}
+		if (sportslist.includes('basketball')) {
+			const basketballRef = data.sports[_pointers.basketball]
+			if (!basketballRef.teamname) {
+				_error.basketball = strEmpty
+				noError = false
+			} else if (!basketballRef.agegroup) {
+				_error.basketball = strNoAge
+				noError = false
+			} else {
+				_error.basketball = ''
+			}
+		}
 
-	// 	setErrors2(_error)
+		setErrors2(_error)
 
-	// 	return noError
-	// }
+		return noError
+	}
 
-	// const [errors, setErrors] = useState({
-	// 	firstname: '',
-	// 	lastname: '',
-	// 	gender: '',
-	// 	age: '',
-	// 	cnic: '',
-	// 	phone: '',
-	// 	socials: '',
-	// 	sports: '',
-	// })
-	// const [errors2, setErrors2] = useState({
-	// 	badminton: '',
-	// 	tabletennis: '',
-	// 	football: '',
-	// 	volleyball: '',
-	// 	basketball: '',
-	// 	cricket: '',
-	// 	egames: '',
-	// })
+	const [errors, setErrors] = useState({
+		firstname: '',
+		lastname: '',
+		gender: '',
+		age: '',
+		cnic: '',
+		phone: '',
+		socials: '',
+		sports: '',
+	})
+	const [errors2, setErrors2] = useState({
+		badminton: '',
+		tabletennis: '',
+		football: '',
+		volleyball: '',
+		basketball: '',
+		cricket: '',
+		egames: '',
+	})
 	const navigate = useNavigate()
 	const [page, setpage] = useState(0)
 	const [personData, setPersonData] = useState({
@@ -357,17 +356,17 @@ export default function Register() {
 
 	return (
 		<>
-			<div class="registersec">
-				<h1>Register</h1>
-				<h2 id="formtitles">{formtitles[page]}</h2>
+			<div class="registersec montserrat regular">
+				<p className='title register'>Register</p>
 
 				<form method="post" to="#">
 					{form[page]}
+					
 
 					<div className="buttongroup">
 						<button
 							disabled={page == 0}
-							class="button-light"
+							class="button-light register"
 							id={page == 0 || page == 4 ? 'disabled' : ''}
 							onClick={(e) => {
 								e.preventDefault()
@@ -389,7 +388,7 @@ export default function Register() {
 							Back
 						</button>
 						<button
-							class="button-dark"
+							class="button-dark register"
 							id={page == 0 || page == 4 ? 'onlybutton' : ''}
 							onClick={(e) => {
 								e.preventDefault()
@@ -440,21 +439,11 @@ function RegisterWelcome() {
 	return (
 		<>
 			<div className="formcontainer">
-				<h4>Please keep the following id documents at hand</h4>
+				<p className='subtitle register'>Are you ready to sign up for Kharian’s biggest sporting event? In just a few steps you can join this premier event</p>
 				<ul>
-					<li>
-						<p>CNIC (if above 18)</p>
-					</li>
-					<li>
-						<p>B Form (if under age)</p>
-					</li>
 					<p>
-						<br />
-						Price for one game only is PKR 1450/- and for one game with socials
-						included is PKR 2500/-
 					</p>
 					<p>
-						<em>any additional games cost PKR 500/game</em>
 					</p>
 				</ul>
 

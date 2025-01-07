@@ -32,6 +32,8 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 	return (
 		<>
 			<div className="formcontainer">
+			<p className='subtitle register'>You've completed your order successfully,
+			Take a screenshot of this tab and pay to one of the following numbers</p>
 				<tbody>
 					<tr>
 						<td>
