@@ -36,7 +36,7 @@ label {
 }
 
 input {
-	background-color: #aeadad;
+	background-color: white;
 }
 
 input:not([type='button']) {
@@ -226,19 +226,23 @@ h5 {
 	.react-select__indicators-container {
 		height: max(fit-content, 80vw);
 	}
+
+	tbody{
+		margin-left: 0 !important;
+	}
 }
 /* Css for react select */
 
 .react-select-container {
 	color: black;
-	background-color: #aeadad;
+	background-color: white;
 	border: black 1px solid;
 	border-radius: 0px;
 	max-width: 36vw;
 }
 
 .react-select__control {
-	background-color: #aeadad !important;
+	background-color: white !important;
 	border-radius: 0px;
 	height: max(fit-content, 38px);
 	border: none !important;
@@ -321,4 +325,10 @@ td > p {
 
 .inputcontainer:first-of-type{
 	margin-top: 15vh;
+}
+
+tbody{
+	display: block;
+	margin-left: 20%;
+	margin-top: 12vh;
 }

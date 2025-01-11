@@ -20,7 +20,6 @@ const options = [
 		teamname: '',
 		gametype: '',
 	},
-	{ value: 'snooker', label: 'Snooker' },
 	{ value: 'egames', label: 'E-games', games: [] },
 	{ value: 'chess', label: 'Chess' },
 	{ value: 'ludo', label: 'Ludo' },

@@ -116,8 +116,8 @@ export default function Register() {
 				_error.sports = 'Cricket is for boys only'
 				noError = false
 			}
-		} else if (Object.keys(data.sports).length > 3) {
-			_error.sports = 'You can only choose three sports max'
+		} else if (Object.keys(data.sports).length > 2) {
+			_error.sports = 'You can only choose two sports max'
 			noError = false
 		} else {
 			_error.sports = ''

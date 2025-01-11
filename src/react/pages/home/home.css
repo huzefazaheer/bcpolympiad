@@ -68,7 +68,7 @@ h2{
 /* Hero for mobile screens */
 @media screen and (max-width: 600px) {
 	.hero-sec {
-		padding: 8vh;
+		padding: 16vh;
 		flex-direction: column;
     text-align: center;
 	}
@@ -164,7 +164,7 @@ ul#clock h4{
 .calltoaction-sec {
 	background-color: var(--color-background);
 	align-items: center;
-	padding: 15vh 7vw;
+	padding: 10vh 7vw;
 	color: white;
 }
 
@@ -266,14 +266,27 @@ ul#clock h4{
 
 /* CalltoAction for mobile screens */
 @media screen and (max-width: 1200px) {
+.calltoaction-sec{
+	padding: 0 7vw 10vh 0	;
+}
+
+
 	.btngroup{
 		justify-content: center;
 		margin-top: 10vh;
-
+		height: 11.5vw;
 	}
 
 	.btngroup .button-dark{
 		font-size: 18px;
+	}
+
+	.btngroup .button-light{
+		width: 12.5vw;
+	}
+
+	.btngroup button{
+		height: 100% !important;
 	}
 	
 	.btngroup .button-light object{

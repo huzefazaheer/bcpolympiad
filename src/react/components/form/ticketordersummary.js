@@ -43,48 +43,8 @@ export default function TicketOrderSummary({
 							<p>{personData.ticket.label}</p>
 						</td>
 					</tr>
-					{/* <tr>
-						<td>
-							<p>Age:</p>
-						</td>
-						<td>
-							<p>{personData.age}</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>CNIC:</p>
-						</td>
-						<td>
-							<p>{personData.cnic}</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Phone number:</p>
-						</td>
-						<td>
-							<p>{personData.phone}</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Socials included:</p>
-						</td>
-						<td>
-							<p>{personData.socials.label}</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p>Games:</p>
-						</td>
-						<td>
-							<p>{sportslist}</p>
-						</td>
-					</tr> */}
 				</tbody>
-				<h5>Your total amount is: PKR {calculateTotal()}</h5>
+				<h5 style={"color:white;"}>Your total amount is: PKR {calculateTotal()}</h5>
 			</div>
 		</>
 	)
