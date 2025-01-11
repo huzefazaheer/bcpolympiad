@@ -34,7 +34,10 @@ function scrollFunction() {
 				</div>
 				<ul className="menu" id={menuOpen ? 'active' : ''}>
 					<li>
-						<Link to="/" className="montserrat regular">
+						<Link onClick={(e) => {
+      e.preventDefault();
+      window.location.href='./';
+      }} className="montserrat regular">
 							Home
 						</Link>
 					</li>
@@ -44,7 +47,10 @@ function scrollFunction() {
 						</Link>
 					</li>
 					<li>
-						<Link to="/register" className="montserrat regular">
+						<Link onClick={(e) => {
+      e.preventDefault();
+      window.location.href='./register';
+      }} className="montserrat regular">
 						Register
 						</Link>
 					</li>

@@ -212,8 +212,27 @@ ul#clock h4{
   	gap: 10px;
 	justify-content: space-evenly;
 	align-items: center;
-	font-size: 48px;
 	height: 105px;
+}
+
+.dates ul li{
+	font-size: 42px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.dates ul{
+	display: flex;
+  gap: 12px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.dates ul li .th{
+	font-size: 24px;
+	display: none;
 }
 
 .date1{

@@ -152,9 +152,9 @@ function TeamNameInput({
 	index,
 	setPersonData,
 }) {
-	var ageoptions = [{ value: 'above', label: 'Under 25' }]
-	if (personData.age <= 16) {
-		ageoptions.push({ value: 'under', label: 'Under 16' })
+	var ageoptions = [{ value: 'above', label: 'Under 23' }]
+	if (personData.age <= 17) {
+		ageoptions.push({ value: 'under', label: 'Under 17' })
 	}
 	let sportdata = personData.sportname
 	return (
