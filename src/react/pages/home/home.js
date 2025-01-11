@@ -47,7 +47,7 @@ function CallToAction() {
 						<p className='th'>th</p>
 					</li>
 				</ul></div><p className='jan'>January</p></div></div>
-				<div className="right"><div className="location"><object type="image/svg+xml" data={locationtag}></object><p className='beaconhouse'>Beaconhouse Kharian Campus</p></div><p className="calltoactionpara">Get ready for two days filled with thrilling competitions, exciting sports activities, and memorable moments at Olympiad Season Five.</p></div></div>
+				<div className="right"><div className="location"><object type="image/svg+xml" data={locationtag}></object><p className='beaconhouse'>Beaconhouse Kharian Campus</p></div><p className="calltoactionpara">Get ready for three days filled with thrilling competitions, exciting sports activities, and memorable moments at Olympiad Season Five.</p></div></div>
 				<div className="btngroup">
 					<button className='button-dark' onClick={(e) => {
       e.preventDefault();

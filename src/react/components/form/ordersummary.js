@@ -94,7 +94,7 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 						</td>
 					</tr>
 				</tbody>
-				<h5>Your total amount is: PKR {calculateTotal()}</h5>
+				<h5 style={"color=white"}>Your total amount is: PKR {calculateTotal()}</h5>
 			</div>
 		</>
 	)

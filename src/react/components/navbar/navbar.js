@@ -6,19 +6,13 @@ import './navbar.css'
 export default function NavigationBar() {
 	const [menuOpen, setMenuOpen] = useState(false)
 
-	window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-}
+	window.onscroll = function() {
+		document.getElementById("navbar").style.display = "hidden";
+	} 
 
 	return (
 		<>
-			<nav id='nav' className='blur'>
+			<nav id='navbar' className='blur'>
 				<div className="top">
 					<div
 						className="toggler"

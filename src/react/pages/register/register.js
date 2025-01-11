@@ -44,7 +44,6 @@ export default function Register() {
 			gender: person.gender.value,
 			age: person.age,
 			phone: person.phone,
-			socials: person.socials.value,
 			games: sportslist,
 			amount: bill,
 		})
@@ -94,12 +93,6 @@ export default function Register() {
 			noError = false
 		} else {
 			_error.gender = ''
-		}
-		if (!data.socials) {
-			_error.socials = strEmpty
-			noError = false
-		} else {
-			_error.socials = ''
 		}
 		let glist = []
 		for (let i = 0; i < data.sports.length; i++) {

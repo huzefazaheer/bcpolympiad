@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Select from 'react-select'
 
-const options = [
+let options = [
 	{ value: 'football', label: 'Football', agegroup: '', teamname: '' },
 	{ value: 'basketball', label: 'Basketball', agegroup: '', teamname: '' },
 	{
@@ -34,6 +34,8 @@ const genderoptions = [
 	{ value: 'm', label: 'Male' },
 	{ value: 'f', label: 'Female' },
 ]
+
+let isStrongmanworthy = false;
 
 export default function RegisterPerson({ personData, setPersonData, errors }) {
 	const [firstdash, setfirstdash] = useState(false)
@@ -100,6 +102,13 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							value={personData.age}
 							onChange={(event) => {
 								setPersonData({ ...personData, age: event.target.value })
+								if(event.target.value>17){
+									isStrongmanworthy = true;
+									options.push({ value: 'strongman', label: 'Strongman' })
+									console.log(options)
+								}else if(isStrongmanworthy){
+									options.pop()
+								}
 							}}
 						/>
 						<p className="error">{errors.age}</p>
@@ -165,24 +174,6 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							}}
 						/>
 						<p className="error">{errors.phone}</p>
-					</div>
-				</div>
-				<div className="inputcontainer specialinput">
-					<label className="speciallabel" htmlFor="socialsincluded">
-						Do you want socials included?
-					</label>
-					<div>
-						<Select
-							id="socialsincluded"
-							className="react-select-container"
-							classNamePrefix="react-select"
-							options={socialsoptions}
-							value={personData.socials}
-							onChange={(value) => {
-								setPersonData({ ...personData, socials: value })
-							}}
-						/>
-						<p className="error special">{errors.socials}</p>
 					</div>
 				</div>
 				<div className="inputcontainer specialinput">
