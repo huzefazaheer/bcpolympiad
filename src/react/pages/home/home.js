@@ -4,6 +4,18 @@ import './home.css'
 import logo from "../resources/logo.png"
 import locationtag from '../resources/location.svg'
 import emailicon from '../resources/emailicon.svg'
+import { useEffect, useState } from 'react'
+
+const countdownDate = new Date("2025-01-24T08:00:00")
+
+const getTimeRemaining = function(){
+	const total = countdownDate - new Date()
+	const days = Math.floor(total / (1000 * 60 * 60 * 24))
+	const hours = Math.floor((total / (1000 * 60 * 60 )) % 24)
+	const minutes = Math.floor((total / (1000 * 60 )) % 60)
+	const seconds = Math.floor((total / (1000)) % 60)
+	return {days, hours, minutes, seconds}
+}
 
 export default function Home() {
 	return (	
@@ -63,7 +75,16 @@ function CallToAction() {
 
 function Time() {
 
-	let countDownDate = new Date("Jan 24, 2025 08:00:00").getTime();
+	const [timeLeft, setTimeLeft] = useState(() => (getTimeRemaining))
+
+	useEffect(()=>{
+		const timer = setInterval(() =>{
+			setTimeLeft(getTimeRemaining, 1000)
+		})
+		return ()=>{
+			clearInterval(timer)
+		}
+	})
 
 	return (
 		<>
@@ -72,28 +93,28 @@ function Time() {
 					11Games    3Days    3Socials
 				</h3>
 				<ul id="clock" className='montserrat regular'><li>
-					<p>00</p>
+					<p>{timeLeft.days}</p>
 					<h4>Days</h4>
 				</li>
 				<li>
 					<p>:</p>
 				</li>
 				<li>
-					<p>00</p>
+					<p>{timeLeft.hours}</p>
 					<h4>Hours</h4>
 				</li>
 				<li>
 					<p>:</p>
 				</li>
 				<li>
-					<p>00</p>
+					<p>{timeLeft.minutes}</p>
 					<h4>Minutes</h4>
 				</li>
 				<li>
 					<p>:</p>
 				</li>
 				<li>
-					<p>00</p>
+					<p>{timeLeft.seconds}</p>
 					<h4>Seconds</h4>
 				</li></ul>
 			</div>

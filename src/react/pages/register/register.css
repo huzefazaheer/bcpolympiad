@@ -187,6 +187,10 @@ h5 {
 		padding: 16vh 4vw 4vh 4vw;
 	}
 
+	.total{
+		color: white;
+	}
+
 	.registersec h1 {
 		text-align: center;
 		font-size: 3rem;
