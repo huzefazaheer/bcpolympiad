@@ -341,5 +341,6 @@ ul#clock h4{
 		color: #b4b4b4c2;
 		font-size: 20px;
 		text-align: left;
+		margin-left: -5vw;
 	}
 }
