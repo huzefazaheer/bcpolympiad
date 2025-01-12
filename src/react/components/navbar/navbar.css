@@ -95,7 +95,8 @@ nav li a:hover {
 
 .navtitle{
 	font-size: 22px;
-	margin-left: 27%;
+	margin-left: auto;
+  margin-right: 25vw;
   }
 
 .toggler svg{

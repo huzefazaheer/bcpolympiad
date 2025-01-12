@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Select from 'react-select'
 
 let options = [
-	{ value: 'football', label: 'Football', agegroup: '', teamname: '' },
+	{ value: 'football', label: 'Futsaul', agegroup: '', teamname: '' },
 	{ value: 'basketball', label: 'Basketball', agegroup: '', teamname: '' },
 	{
 		value: 'cricket',

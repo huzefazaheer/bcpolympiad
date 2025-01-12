@@ -266,9 +266,9 @@ function TeamTypeInput({
 		{ value: 'one', label: 'Singles' },
 		{ value: 'two', label: 'Doubles' },
 	]
-	let ageoptions = [{ value: 'above', label: 'Under 25' }]
-	if (personData.age <= 16) {
-		ageoptions.push({ value: 'under', label: 'Under 16' })
+	let ageoptions = [{ value: 'above', label: 'Under 23' }]
+	if (personData.age <= 17) {
+		ageoptions.push({ value: 'under', label: 'Under 17' })
 	}
 	return (
 		<div className="inputcontainer detailcontainer">

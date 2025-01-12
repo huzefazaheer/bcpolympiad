@@ -10,21 +10,43 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 	}
 
 	function calculateTotal() {
-		let total = 1450
-		if (personData.socials.label == 'Yes') {
-			total = total + 1050
-		}
-		if (personData.sports.length > 1) {
-			total = total + 500 * (personData.sports.length - 1)
-			if (gamesindex != null) {
-				total = total + 500 * (personData.sports[gamesindex].games.length - 1)
+		let total = 0
+		
+		for (let i = 0; i < personData.sports.length; i++) {
+			
+			if (personData.sports[i].value == 'egames') {
+				for (let j = 0; j < personData.sports[i].games.length; j++) {
+					switch (personData.sports[i].games[j].value){
+						case 'tekken':
+							total = total + 4500
+							break
+						case 'fifa':
+							total = total + 4500
+							break
+						case 'pubg':
+							total = total + 3500
+							break
+					}
+				}
+				break
 			}
-		} else {
-			if (gamesindex != null) {
-				total = total + 500 * (personData.sports[gamesindex].games.length - 1)
-			}
-		}
+			
+			let sportname = personData.sports[i].value
 
+			if(sportname == 'badminton' || sportname == 'tabletennis'){
+				if(personData.sports[i].gametype.value == 'one'){
+					total = total + 3500
+				}else{
+					total = total + 3000
+				}
+			}else if(sportname == 'cricket' || sportname == 'volleyball' || sportname == 'basketball' || sportname == 'football'){
+				total = total + 3000
+			}else if(sportname == 'chess' || sportname == 'ludo' || sportname == 'strongman'){
+				total = total + 4000
+			}
+			
+		}
+		console.log(personData)
 		setBill(total)
 		return total
 	}
