@@ -55,7 +55,7 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 		<>
 			<div className="formcontainer">
 			<p className='subtitle register'>You've completed your order successfully,
-			Take a screenshot of this tab and pay to one of the following numbers</p>
+			Take a screenshot of this tab and pay to one of the following numbers: <br/> IBAN Number: PK17UNIL0109000313175556</p>
 				<tbody>
 					<tr>
 						<td>
