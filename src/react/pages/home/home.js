@@ -90,31 +90,31 @@ function Time() {
 		<>
 			<div id="location" class="location-sec">
 				<h3 className='montserrat medium detailtxt'>
-					11Games    3Days    3Socials
+					11-Games    3-Days    3-Socials
 				</h3>
 				<ul id="clock" className='montserrat regular'><li>
-					<p>{timeLeft.days}</p>
+					<p className='t'>{timeLeft.days}</p>
 					<h4>Days</h4>
 				</li>
 				<li>
 					<p>:</p>
 				</li>
 				<li>
-					<p>{timeLeft.hours}</p>
+					<p className='t'>{timeLeft.hours}</p>
 					<h4>Hours</h4>
 				</li>
 				<li>
 					<p>:</p>
 				</li>
 				<li>
-					<p>{timeLeft.minutes}</p>
+					<p className='t'>{timeLeft.minutes}</p>
 					<h4>Minutes</h4>
 				</li>
 				<li>
 					<p>:</p>
 				</li>
 				<li>
-					<p>{timeLeft.seconds}</p>
+					<p className='t'>{timeLeft.seconds}</p>
 					<h4>Seconds</h4>
 				</li></ul>
 			</div>

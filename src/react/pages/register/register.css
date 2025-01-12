@@ -153,7 +153,7 @@ h5 {
 
 	.formcontainer {
 		padding-top: 2vh;
-		margin: 0 2rem;
+		margin: 0;
 	}
 
 	button.register {
@@ -222,6 +222,10 @@ h5 {
 		width: 80vw;
 	}
 
+	.react-select__control {
+		width: 80vw;
+	}
+
 	.react-select__value-container {
 		font-size: 1rem;
 		height: max(fit-content, 80vw);
@@ -233,6 +237,10 @@ h5 {
 
 	tbody{
 		margin-left: 0 !important;
+	}
+
+	.subtitle.register{
+		font-size: 20px !important;
 	}
 }
 /* Css for react select */
