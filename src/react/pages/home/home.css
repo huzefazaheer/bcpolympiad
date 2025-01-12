@@ -288,7 +288,7 @@ ul#clock h4{
 /* CalltoAction for mobile screens */
 @media screen and (max-width: 1200px) {
 .calltoaction-sec{
-	padding: 0 7vw 10vh 0	;
+	padding: 0 0 10vh 0	;
 }
 
 
@@ -332,6 +332,6 @@ ul#clock h4{
 	.calltoactionpara{
 		color: #b4b4b4c2;
 		font-size: 20px;
-		text-align: center;
+		text-align: left;
 	}
 }
